@@ -4,7 +4,7 @@ from sys import argv
 
 script, filename = argv
 
-txt = open(filename)
+txt = open(filename)  # This creates the file objects and assigns it to the txt variable.
 
 print "Here is your file %r:" % (filename)
 print txt.read()
