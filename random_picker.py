@@ -4,25 +4,35 @@ import random
 from time import sleep
 import sys
 
-# Ask user for the number of players.
+decision = raw_input("Use default list? (Y/N)")
 
-print "How many people eligible to play in lottery?"
+if decision == "Y" or decision == "y":
+	# Use the default list or ask for a new list.
+	print "These are the people participating in the raffle."
 
-total_players = int(raw_input("> "))
+	player_name = ['Rajesh', 'Raj', 'Arshad', 'Vamshi', 'Simo', 'Samir','Praveen', 'Ekta',
+	'Ishwarya', 'Kishore', 'Raviteja', 'Janardhan', 'Chandra', 'Maya', 'Harish']
 
-# Create a list of those many numbers.
-
-# Declare an list variable with names of participants.
-# Ask users for inputting the name.
-
-player_name = [0] * total_players
-
-for people in range(total_players):
-	counter = people + 1
-	print "Name of player %d? " % counter
-	input_value = raw_input("> ")
-	player_name[people] = input_value
-
+	total_players = len(player_name)
+	print "I am using these in the raffle. If they are not correct press CTRL-C"
+	for i in range(total_players):
+		print player_name[i]
+elif decision == "N" or decision == "n":
+	# Ask user for the number of players.
+	print "How many people eligible to play in lottery?"
+	total_players = int(raw_input("> "))
+	# Create a list of those many numbers.
+	# Declare an list variable with names of participants.
+	# Ask users for inputting the name.
+	player_name = [0] * total_players
+	for people in range(total_players):
+		counter = people + 1
+		print "Name of player %d? " % counter
+		input_value = raw_input("> ")
+		player_name[people] = input_value
+else:
+	print "You have been only asked to select Y or N."
+	sys.exit()
 
 # Ask user if they want to give any number as the seed?
 
@@ -52,14 +62,16 @@ print "And here is the random from the number of list items I got %d" %modulo_of
 print "And the winner is .... Drumrolls!!!"
 print
 print
-sleep(10)
-
+sleep(5)
 # Give the random generator name picker.
 print player_name[modulo_of_list]
-
 sleep(2)
-print
-print "End of program, get back to work!"
 
+print
+print "Congragulations %s!!!" % player_name[modulo_of_list]
+sleep(2)
+
+print
+print "Everyone, thank you for playing, now get back to work!"
 # End of program
 
