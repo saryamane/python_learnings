@@ -23,7 +23,13 @@ def main():
 	print stuff[1]
 	print stuff[-1] # whoa! fancy
 	print stuff.pop()
-	print ' '.join(stuff) # what? cool!
+	print ','.join(stuff) # what? cool!
 	print '#'.join(stuff[3:5]) # super stellar!
+	stuff.sort()
+	print stuff
+
+	print "Use this website to learn about all there is to for Python Lists"
+	print "http://www.tutorialspoint.com/python/python_lists.htm"
+
 
 if __name__ == "__main__": main()
