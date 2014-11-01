@@ -51,7 +51,7 @@ def convert(snippet, phrase):
 		param_names.append(', '.join(random.sample(WORDS, param_count)))
 
 	for sentence in snippet, phrase:
-		result = sentence[:]
+		result = sentence[:] # This is the way you copy a list in python.
 
 		# fake class names
 		for word in class_names:
